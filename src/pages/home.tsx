@@ -37,7 +37,7 @@ function getItem(
     children,
     label,
     type,
-  } as MenuItem;
+  } as MenuItem
 }
 
 export default function Home(props:any){
