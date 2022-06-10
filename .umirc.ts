@@ -12,6 +12,7 @@ export default defineConfig({
       { path: '/home/users', component: '@/pages/users' },
       { path: '/home/roles', component: '@/pages/jurisdiction/roles' },
       { path: '/home/rights', component: '@/pages/jurisdiction/Rights' },
+      { path: '/home/goods', component: '@/pages/commodity/goods' },
     ]},
   ],
   fastRefresh: {},

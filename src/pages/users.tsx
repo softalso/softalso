@@ -1,6 +1,7 @@
 import { Select,Breadcrumb, Card, Input, Button, message, Table, Switch, Pagination, Modal,Form,Checkbox } from 'antd';
 import { PlusOutlined,EditOutlined,DeleteOutlined,AppstoreOutlined } from '@ant-design/icons'
 import React, { useState, useEffect, createRef } from 'react';
+// import {request} from 'umi';
 const { Search } = Input
 import { FindData,Add,UpdateMor,Del } from '@/request/mixture'
 import Crumbs from '@/resolution/crumbs';
@@ -212,7 +213,7 @@ export default function Users(props: any) {
                         style={{ width: 304 }}
                     />
                     <Button onClick={() =>(setAddstatus(true),setupstatus(false))} style={{ marginLeft: '20px' }} type="primary" icon={<PlusOutlined />}>
-                        添加
+                        添加用户
                     </Button>
                 </div>
                 {/* 数据表格 */}
