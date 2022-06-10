@@ -133,9 +133,10 @@ export default function Role() {
   // 递归遍历树形结构 将已有的权限key添加到数组中并返回
   const transformTree = (data,array=[])=>{
     data.forEach(item=>{
-      array.push(item.id)
       if (item.children && item.children.length > 0) {
         transformTree(item.children,array)
+      }else{
+        array.push(item.id)
       }
     })
     return array

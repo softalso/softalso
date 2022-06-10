@@ -1,4 +1,6 @@
 import axios from 'axios'
+import {message} from 'antd'
+import { history } from 'umi';
 
 // 创建axios实例
 const server = axios.create({
@@ -21,7 +23,11 @@ server.interceptors.request.use(function (config) {
 // 添加响应拦截器
 server.interceptors.response.use(function (response) {
     // 对响应数据做点什么
-    if (response.status>=200 || response.status<=300) return response.data
+    if (response.status>=200 || response.status<=300){
+        let {data,meta} = response.data
+        if(meta.msg === '无效token' && meta.status===400) return (message.error('token已过期!请重新登录'),localStorage.removeItem('token'),history.push('/'))
+        return response.data
+    }
     return response;
 }, function (error) {
     // 对响应错误做点什么

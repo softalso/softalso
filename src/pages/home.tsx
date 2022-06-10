@@ -10,13 +10,9 @@ import  { Layout,Menu,Button   } from 'antd';
 import type { MenuProps,TreeProps } from 'antd';
 import React, { useState,useEffect } from 'react';
 import { BrowserRouter as Router,Redirect,Route,withRouter,Switch } from 'react-router-dom';
-import Welcome from './welcome';
 import {getMenus} from '../request/jurisdiction.js'
-import Users from './users';
 // import { getMenuData } from '@ant-design/pro-layout';
 import src from '@/static/zhentao.png'
-import Role from './jurisdiction/roles';
-import Rights from './jurisdiction/rights';
 
 const iconslist = [<FundOutlined/>,<UserOutlined/>,<CrownOutlined/>,<ShoppingOutlined/>,<ProfileOutlined/>]
 
@@ -56,6 +52,7 @@ export default function Home(props:any){
   const getData = async ()=>{
     let res = await getMenus()
     let list:any = []
+    if (!res)return false
     res.data.forEach((item,index)=>{
       let children1 = []
       let {authName,id,path,children} = item

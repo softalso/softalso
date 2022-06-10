@@ -119,7 +119,7 @@ export default function Goods() {
       render: (data) => {
         return (
           <div>
-            <Button type="primary" icon={<EditOutlined />} onClick={() =>openupdate(data)}>修改</Button>
+            <Button type="primary" icon={<EditOutlined />} onClick={() =>openupdate(data)}>编辑</Button>
             &nbsp;&nbsp;
             <Button danger icon={<DeleteOutlined />} onClick={() =>del(data.goods_id)}>删除</Button>
           </div>
